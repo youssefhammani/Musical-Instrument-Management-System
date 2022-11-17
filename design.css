@@ -60,3 +60,41 @@
     background: linear-gradient(135deg, #289cf5, #84c0ec) !important;
     color: #fff;
 }
+
+/* login Page  */
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #a19f9f;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #747474, #acabab, #5a585a, #070707);
+    
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #9d9a98, #716d6d, #323232, #101010);
+}
+
+/* #bkgr-logo {
+    background-image: url("https://www.crushpixel.com/big-static16/preview4/musical-background-with-musical-notes-2407866.jpg");
+} */
+
+.text-center #log-in {
+    box-shadow: #c7c3c3b5 0px 4px;
+}
+
+/* #bg-img {
+    background-image: url("/images/bgrnd.jpg");
+} */
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}

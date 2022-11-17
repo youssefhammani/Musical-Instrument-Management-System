@@ -1,4 +1,9 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+
+
+
     
     //CONNECT TO MYSQL DATABASE USING MYSQLI
     $link = mysqli_connect("localhost", "root", "", "myProject");

@@ -1,5 +1,14 @@
 <?php
     include('scripts.php');
+    include('verification.php');
+    
+        // if(!isset('Home'))
+        // {
+        //     header("location: login.php");
+        //     exit();
+        // }
+        // else
+        // header("location: home.php");
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +26,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="dsn.css">
+        <link rel="stylesheet" href="design.css">
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Musical</a>
+                <a class="navbar-brand" href="#!"><img src="images/logo.png" style="width: 50px;" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -45,7 +54,7 @@
                             Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button> -->
-                        <button  type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-task">
+                        <button  type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#modal-task" onclick="displayButton()">
                             Add product
                             <i class="bi bi-plus-square-fill ms-2"></i>
                         </button>
@@ -162,142 +171,9 @@
         <!-- Section-->
         <section class="m-5">
             <div class="row ">
-                <div class="col-xl-4 col-lg-6">
-                    <div class="card mb-5 m-auto" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4 d-flex">
-                                <div class="badge bg-dark text-white position-absolute m-2" style="top: 0.5rem; right: 0.5rem">
-                                    string
-                                </div>
-                                <img src="https://source.unsplash.com/600x900/?tech,street" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8 ">
-                                <div class="card-body">
-                                    <h4 class="card-title">product Name</h4>
-                                    <p class="card-text fst-italic"><small class="text-muted">#1 created in 2/4/2020</small></p>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="fs-5">
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Quantity</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <strong class="px-4">45</strong> <br>
-
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Price</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    <strong>$18.00</strong>
-                                </div>
-                                <div class="text-end px-4 py-4"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="card mb-5 m-auto" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4 d-flex">
-                                <div class="badge bg-dark text-white position-absolute m-2" style="top: 0.5rem; right: 0.5rem">
-                                    string
-                                </div>
-                                <img src="https://source.unsplash.com/600x900/?tech,nater" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8 ">
-                                <div class="card-body">
-                                    <h4 class="card-title">product Name</h4>
-                                    <p class="card-text fst-italic"><small class="text-muted">#1 created in 2/4/2020</small></p>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="fs-5">
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Quantity</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <strong class="px-4">45</strong> <br>
-
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Price</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    <strong>$18.00</strong>
-                                </div>
-                                <div class="text-end px-4 py-4"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="card mb-5 m-auto" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4 d-flex">
-                                <div class="badge bg-dark text-white position-absolute m-2" style="top: 0.5rem; right: 0.5rem">
-                                    string
-                                </div>
-                                <img src="https://source.unsplash.com/600x900/?tech,woman" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8 ">
-                                <div class="card-body">
-                                    <h4 class="card-title">product Name</h4>
-                                    <p class="card-text fst-italic"><small class="text-muted">#1 created in 2/4/2020</small></p>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="fs-5">
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Quantity</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <strong class="px-4">45</strong> <br>
-
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Price</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    <strong>$18.00</strong>
-                                </div>
-                                <div class="text-end px-4 py-4"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6">
-                    <div class="card mb-5 m-auto" style="max-width: 540px;">
-                        <div class="row g-0">
-                            <div class="col-md-4 d-flex">
-                                <div class="badge bg-dark text-white position-absolute m-2" style="top: 0.5rem; right: 0.5rem">
-                                    string
-                                </div>
-                                <img src="https://source.unsplash.com/600x900/?tech,music" class="card-img" alt="...">
-                            </div>
-                            <div class="col-md-8 ">
-                                <div class="card-body">
-                                    <h4 class="card-title">product Name</h4>
-                                    <p class="card-text fst-italic"><small class="text-muted">#1 created in 2/4/2020</small></p>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                </div>
-                                <div class="fs-5">
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Quantity</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <strong class="px-4">45</strong> <br>
-
-                                    <span class="fst-italic text-muted px-4">
-                                        <strong>Price</strong>
-                                        <small class="px-2">:</small>
-                                    </span>
-                                    <span class="text-muted text-decoration-line-through">$20.00</span>
-                                    <strong>$18.00</strong>
-                                </div>
-                                <div class="text-end px-4 py-4"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    addProduct();
+                ?>
             </div>
         </section>
         <!-- Footer-->
@@ -318,16 +194,27 @@
                                 <!-- This Input Allows Storing Task Index  -->
                                 <input type="hidden" name="task-id" id="task-id">
                                 <div class="mb-3">
-                                    <label class="form-label">Title</label>
-                                    <input type="text" class="form-control" name="task-title" id="task-title" placeholder="Product Name"/>
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="task-name" id="task-name" placeholder="Product Name"/>
+                                </div>
+                                <div class="mb-3">
+								<label class="form-label">Category</label>
+								<select class="form-select" name="task-category" id="task-cat">
+									<!-- <option value="">Please select</option> -->
+									<option value="1">Idiophones</option>
+									<option value="2">Membranophones</option>
+									<option value="3">Chordophones</option>
+									<option value="4">Aerophones</option>
+									<option value="5">Electrophones</option>
+								</select>
+							</div>
+                                <div class="mb-3">
+                                    <label class="form-label">Quantity</label>
+                                    <input type="text" name="task-quantity" id="task-quantity" class="form-control" />
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Price</label>
-                                    <input type="price" name="task-price" id="task-price" class="form-control" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Quantity</label>
-                                    <input type="quantity" name="task-quantity" id="task-quantity" class="form-control" />
+                                    <input type="text" name="task-price" id="task-price" class="form-control" />
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Date</label>
@@ -351,6 +238,7 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
