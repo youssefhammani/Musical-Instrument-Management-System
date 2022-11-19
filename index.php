@@ -1,11 +1,6 @@
 <?php
 
   include('verification.php');
-  
-    if(isset($_SESSION['first_namee']))
-    {
-      header("location: home.php");
-    }
 
 ?>
 
@@ -52,7 +47,7 @@
   
                     <div class="form-outline mb-4">
                       <label class="form-label" for="form2Example22">Password</label>
-                      <input type="password" id="form2Example22" class="form-control" name="login-whit-passowrd" required />
+                      <input type="password" id="form2Example22" class="form-control" name="login-with-passowrd" required />
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">

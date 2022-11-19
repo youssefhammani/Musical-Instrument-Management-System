@@ -1,14 +1,9 @@
 <?php
     include('scripts.php');
-    include('verification.php');
     
-        // if(!isset('Home'))
-        // {
-        //     header("location: login.php");
-        //     exit();
-        // }
-        // else
-        // header("location: home.php");
+        if(empty($_SESSION['email'])) {
+            header("location: login.php");
+        }
 ?>
 
 <!DOCTYPE html>

@@ -2,8 +2,6 @@
 
     include 'database.php';
 
-    // session_start(); 
-
     if(isset($_POST['signup']))        saveUser();
     if(isset($_POST['login']))         userLogin();
 
@@ -34,7 +32,7 @@
         global $link;
 
         $user_login_email     = $_POST['login-via-email'];
-        $user_login_password  = $_POST['login-whit-passowrd'];
+        $user_login_password  = $_POST['login-with-passowrd'];
 
         $query = "SELECT * FROM `users` WHERE Email_address = '$user_login_email' AND Password = '$user_login_password'";
         
@@ -42,9 +40,10 @@
         $result = mysqli_query($link, $query);
         $rows   = mysqli_fetch_assoc($result);
 
-        $_SESSION['first_namee'] = $rows['first_name'];
-        $_SESSION['last_namee']  = $rows['last_name'];
-        
+        $_SESSION['first_name'] = $rows['First_name'];
+        $_SESSION['last_name']  = $rows['Last_name'];
+        $_SESSION['email']       = $rows['Email_address'];
+
         if(mysqli_num_rows($result) != 0){
             header('location: home.php');
         }

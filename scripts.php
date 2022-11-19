@@ -7,7 +7,7 @@
     //ROUTING
     if(isset($_POST['save']))        saveProduct();
     if(isset($_POST['update']))      updateProduct();
-    if(isset($_POST['delete']))      deleteTask();
+    if(isset($_POST['delete']))      deleteProduct();
 
 
     function addProduct()
@@ -111,6 +111,25 @@
         if(mysqli_query($link, $query)){
             $_SESSION['message'] = "Task has been updated successfully !";
 		    header('location: home.php');
+        } else{
+            echo "ERROR: Could not able to execute $query. " . mysqli_error($link);
+        }
+    }
+
+    function deleteProduct()
+    {
+        global $link;
+        
+        //CODE HERE
+        $id = $_POST["task-id"];
+
+        //SQL DELETE
+        $query  = "DELETE  FROM `products` WHERE id = $id";
+
+        // PROTECTION
+        if(mysqli_query($link, $query)){
+            $_SESSION['message'] = "Task has been deleted successfully !";
+            header('location: home.php');
         } else{
             echo "ERROR: Could not able to execute $query. " . mysqli_error($link);
         }
