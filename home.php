@@ -1,9 +1,9 @@
 <?php
     include('scripts.php');
-    
+
         if(empty($_SESSION['email'])) {
-            header("location: login.php");
-        }
+            header("location: index.php");
+        }      
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <link rel="stylesheet" href="design.css">
+        <link rel="stylesheet" href="css/design.css">
     </head>
     <body>
         <!-- Navigation-->
@@ -53,6 +53,17 @@
                             Add product
                             <i class="bi bi-plus-square-fill ms-2"></i>
                         </button>
+                        <div class="nav-item dropdown d-flex flex-row px-4">
+                            <img class="rounded-circle" src="images/me.jpeg" 
+                            style="height:40px; width: 40px;" /> 
+                            <span>
+                                <a class="nav-link dropdown-toggle text-black" id="navbarDropdown" href="#" data-bs-toggle="dropdown" ><?php echo $_SESSION['first_name']; echo "  ";echo $_SESSION['last_name']?></a>
+                                <ul class="dropdown-menu bg-black" >
+                                    <li class="nav-item"><a class="nav-link" href="userprofile.php"><i class="bi bi-pencil-square pe-2"></i>Profile</a></li>
+                                    <li class="nav-item"><a class="nav-link text-danger" href="logout.php"><i class="bi bi-box-arrow-in-right pe-2 "></i>Logout</a></li>
+                                </ul>
+                            </span>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -67,8 +78,9 @@
             </div>
         </header>
         <!-- Dashboard -->
-        <div class="col-md-10 m-auto py-5">
+        <div class="col-md-10 m-auto">
             <div class="row ">
+                <h1 class="text-center text-muted fst-italic py-5">Dashboard</h1>
                 <div class="col-xl-3 col-lg-6">
                     <div class="card l-bg-cherry">
                         <div class="card-statistic-3 p-4">
@@ -166,6 +178,14 @@
         <!-- Section-->
         <section class="m-5">
             <div class="row ">
+            <h1 class="text-center text-muted fst-italic py-5">Product</h1>
+
+            <?php if (isset($_SESSION['message']))  : ?>
+            <div class="alert alert-success" role="alert">
+                <strong><?php echo $_SESSION['message'] ?></strong>
+            </div>
+            <?php unset($_SESSION['message']); endif; ?>
+
                 <?php
                     addProduct();
                 ?>
@@ -173,14 +193,14 @@
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Made &copy; by Joseph</p></div>
         </footer>
 
         <!-- MODAL -->
         <div class="modal fade" id="modal-task">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="scripts.php" method="POST" id="form-task" name="Form" onsubmit="return validateForm()">
+                    <form action="scripts.php" method="POST" id="form-task" name="Form" >
                         <div class="modal-header">
                             <h5 class="modal-title">Add Task</h5>
                             <a href="#" class="btn-close" data-bs-dismiss="modal"></a>

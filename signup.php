@@ -45,36 +45,43 @@
               <form action="verification.php" method="POST" data-parsley-validate>
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
+
+                <?php if (isset($_SESSION['message']))  : ?>
+            <div class="alert alert-danger" role="alert">
+                <strong><?php echo $_SESSION['message']; ?></strong>
+            </div>
+            <?php unset($_SESSION['message']); endif; ?>
+
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" name="first-name" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Only Alphabets are accepted" required />
-                      <label class="form-label" for="form3Example1">First name</label>
+                      <input type="text" id="form3Example1" class="form-control" name="first-name" placeholder="First name" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Only Alphabets are accepted" required />
+                      <!-- <label class="form-label" for="form3Example1">First name</label> -->
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" name="last-name" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Only Alphabets are accepted" required/>
-                      <label class="form-label" for="form3Example2">Last name</label>
+                      <input type="text" id="form3Example2" class="form-control" name="last-name" placeholder="Last name" data-parsley-pattern="^[a-zA-Z]+$" data-parsley-pattern-message="Only Alphabets are accepted" required/>
+                      <!-- <label class="form-label" for="form3Example2">Last name</label> -->
                     </div>
                   </div>
                 </div>
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" name="user-email" placeholder="example@example.com" aria-describedby="emailHelp" required/>
-                  <label class="form-label" for="form3Example3">Email address</label>
+                  <input type="email" id="form3Example3" class="form-control" name="user-email" placeholder="Email address" aria-describedby="emailHelp" required/>
+                  <!-- <label class="form-label" for="form3Example3">Email address</label> -->
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" name="user-password" data-parsley-length="[8, 16]" data-parsley-minlength-message="Please set a password more then 8" required/>
-                  <label class="form-label" for="form3Example4">Password</label>
+                  <input type="password" id="form3Example4" class="form-control" name="user-password" placeholder="password" data-parsley-length="[8, 16]" data-parsley-minlength-message="Please set a password more then 8" required/>
+                  <!-- <label class="form-label" for="form3Example4">Password</label> -->
                 </div>
 
                 <!-- Confirm password -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" name="user-password" data-parsley-equalto="#form3Example4" data-parsley-equalto-message="This is not the same password" required/>
-                  <label class="form-label" for="form3Example4">Confirm password</label>
+                  <input type="password" id="form3Example5" class="form-control" name="confirm-user-password" placeholder="Confirm password" data-parsley-equalto="#form3Example4" data-parsley-equalto-message="This is not the same password" required/>
+                  <!-- <label class="form-label" for="form3Example4">Confirm password</label> -->
                 </div>
 
                 <!-- Checkbox -->

@@ -76,7 +76,7 @@
         $quantity    = $_POST['task-quantity'];
         $date        = test_input($_POST['task-date']);
         $name        = test_input($_POST['task-name']);
-        $description = test_input($_POST['task-description']);
+        $description = test_input   ($_POST['task-description']);
 
         //SQL INSERT
         $query  = "INSERT INTO `products` VALUES (null, '$name', '$price', '$quantity', '$date', '$description', '$category')";

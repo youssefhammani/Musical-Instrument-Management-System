@@ -23,3 +23,13 @@ function displayButton()
     
     document.getElementById('form-task').reset();
 }
+
+function showPassword()
+{
+    var stock = document.getElementById("form2Example22");
+
+    if (stock.type === "password")
+        stock.type = "text";
+    else 
+      stock.type = "password";
+}

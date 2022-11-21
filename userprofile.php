@@ -1,3 +1,8 @@
+<?php
+    include('scripts.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +19,7 @@
                 <div class="col">
                     <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
                         <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="#"><img src="images/logo.png" style="width: 50px;" alt="logo"></a></li>
+                            <li class="breadcrumb-item"><a href="home.php"><img src="images/logo.png" style="width: 50px;" alt="logo"></a></li>
                             <!-- <li class="breadcrumb-item"><a href="#">User</a></li> -->
                             <li class="breadcrumb-item active py-3" aria-current="page">User Profile</li>
                         </ol>
@@ -26,9 +31,9 @@
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" 
+                            <img src="images/me.jpeg" alt="avatar" 
                             class="rounded-circle img-fluid" style="width: 150px;">
-                            <h5 class="my-3">John Smith</h5>
+                            <h5 class="my-3"><?php echo $_SESSION['first_name']; echo "  ";echo $_SESSION['last_name']?></h5>
                             <p class="text-muted mb-1">Full Stack Developer</p>
                             <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                             <div class="d-flex justify-content-center mb-2">
@@ -47,7 +52,7 @@
                                     <p class="mb-0">First Name</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">Youssef</p>
+                                    <p class="text-muted mb-0"><?php echo $_SESSION['first_name']; ?></p>
                                 </div>
                             </div>
                             <hr>
@@ -56,7 +61,7 @@
                                     <p class="mb-0">Last Name</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">Hammani</p>
+                                    <p class="text-muted mb-0"><?php echo $_SESSION['last_name']; ?></p>
                                 </div>
                             </div>
                             <hr>
@@ -65,7 +70,7 @@
                                     <p class="mb-0">Email</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <p class="text-muted mb-0">example@example.com</p>
+                                    <p class="text-muted mb-0"><?php echo $_SESSION['email']; ?></p>
                                 </div>
                             </div>
                             <hr>
