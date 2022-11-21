@@ -71,12 +71,12 @@
         global $link;
 
         // CODE HERE
-        $price       = $_POST['task-price'];
-        $category    = $_POST['task-category'];
-        $quantity    = $_POST['task-quantity'];
+        $price       = test_input($_POST['task-price']);
+        $category    = test_input($_POST['task-category']);
+        $quantity    = test_input($_POST['task-quantity']);
         $date        = test_input($_POST['task-date']);
         $name        = test_input($_POST['task-name']);
-        $description = test_input   ($_POST['task-description']);
+        $description = test_input($_POST['task-description']);
 
         //SQL INSERT
         $query  = "INSERT INTO `products` VALUES (null, '$name', '$price', '$quantity', '$date', '$description', '$category')";
@@ -95,10 +95,10 @@
         global $link;
 
         //CODE HERE
-        $id          = $_POST['task-id'];
-        $price       = $_POST['task-price'];
-        $category    = $_POST['task-category'];
-        $quantity    = $_POST['task-quantity'];
+        $id          = test_input($_POST['task-id']);
+        $price       = test_input($_POST['task-price']);
+        $category    = test_input($_POST['task-category']);
+        $quantity    = test_input($_POST['task-quantity']);
         $date        = test_input($_POST['task-date']);
         $name        = test_input($_POST['task-name']);
         $description = test_input($_POST['task-description']);

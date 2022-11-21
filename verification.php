@@ -1,14 +1,15 @@
 <?php
 
     include 'database.php';
+    include 'scripts.php';
 
     //SESSSION IS A WAY TO STORE DATA TO BE USED ACROSS MULTIPLE PAGES
-    session_start();
+    // session_start();
 
     if(isset($_POST['signup']))        saveUser();
     if(isset($_POST['login']))         userLogin();
 
-    
+
     function checkInput($first_name, $last_name, $user_email, $user_password, $confirm_user_password, $check_email)
     {
         if (empty($user_email) || empty($user_password) || empty($first_name) || empty($confirm_user_password || empty($last_name)))
@@ -53,11 +54,11 @@
     {
         global $link;
 
-        $first_name            = $_POST['first-name'];
-        $last_name             = $_POST['last-name'];
-        $user_email            = $_POST['user-email'];
-        $user_password         = $_POST['user-password'];
-        $confirm_user_password = $_POST['confirm-user-password'];
+        $first_name            = test_input($_POST['first-name']);
+        $last_name             = test_input($_POST['last-name']);
+        $user_email            = test_input($_POST['user-email']);
+        $user_password         = test_input($_POST['user-password']);
+        $confirm_user_password = test_input($_POST['confirm-user-password']);
 
         $sql         = "SELECT * FROM `users` WHERE Email_address = '$user_email'";
 
@@ -87,8 +88,8 @@
     {
         global $link;
 
-        $user_login_email     = $_POST['login-via-email'];
-        $user_login_password  = $_POST['login-with-passowrd'];
+        $user_login_email     = test_input($_POST['login-via-email']);
+        $user_login_password  = test_input($_POST['login-with-passowrd']);
 
         $query = "SELECT * FROM `users` WHERE Email_address = '$user_login_email' AND Password = '$user_login_password'";
         

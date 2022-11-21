@@ -1,5 +1,6 @@
 <?php
     include('scripts.php');
+    include('dashboard.php');
 
         if(empty($_SESSION['email'])) {
             header("location: index.php");
@@ -86,12 +87,12 @@
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-shopping-cart"></i></div>
                             <div class="mb-4">
-                                <h5 class="card-title mb-0">New Orders</h5>
+                                <h5 class="card-title mb-0">The number of productss</h5>
                             </div>
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        3,243
+                                        <?= totalProducts(); ?>
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -99,7 +100,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: <?= divideProducts()."%"; ?>"></div>
                             </div>
                         </div>
                     </div>
@@ -114,7 +115,8 @@
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        15.07k
+                                        <!-- 15.07k -->
+                                        <?= allCustomers()."K"; ?>
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -122,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: <?= divideCustomers()."%"; ?>"></div>
                             </div>
                         </div>
                     </div>
@@ -155,12 +157,13 @@
                         <div class="card-statistic-3 p-4">
                             <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
                             <div class="mb-4">
-                                <h5 class="card-title mb-0">Revenue Today</h5>
+                                <h5 class="card-title mb-0">Capital</h5>
                             </div>
                             <div class="row align-items-center mb-2 d-flex">
                                 <div class="col-8">
                                     <h2 class="d-flex align-items-center mb-0">
-                                        $11.61k
+                                        <!-- $11.61k -->
+                                        <?= "$".capital()."K"; ?>
                                     </h2>
                                 </div>
                                 <div class="col-4 text-right">
@@ -168,7 +171,7 @@
                                 </div>
                             </div>
                             <div class="progress mt-1 " data-height="8" style="height: 8px;">
-                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: <?= divideAmount()."%"; ?> "></div>
                             </div>
                         </div>
                     </div>
