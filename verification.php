@@ -32,7 +32,7 @@
         }
         else if(mysqli_num_rows($check_email) != 0)
         {
-                $_SESSION['message'] = 'This Email Is Already Token';
+                $_SESSION['message'] = 'Email already received earlier, Try another account.';
                 $_SESSION['icon'] = 'fa-solid fa-xmark';
                 header('location: signup.php');
 

@@ -183,11 +183,18 @@
             <div class="row ">
             <h1 class="text-center text-muted fst-italic py-5">Product</h1>
 
-            <?php if (isset($_SESSION['message']))  : ?>
-            <div class="alert alert-success" role="alert">
-                <strong><?php echo $_SESSION['message'] ?></strong>
-            </div>
-            <?php unset($_SESSION['message']); endif; ?>
+            <?php
+                if (isset($_SESSION['message']))
+                {
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Holy guacamole!</strong> <?php echo $_SESSION['message']; ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                            <?php unset($_SESSION['message']); ?>
+                    <?php
+                }
+                ?>
 
                 <?php
                     addProduct();

@@ -22,6 +22,21 @@
 </head>
 <body>
   <section id="bkgr-logo" class="h-100 gradient-form">
+
+    <style>
+      #bkgr-logo {
+        /* background-color: #C8C0BF; */
+        background: linear-gradient(217deg, rgba(33, 31, 31, 0.8), rgba(255,0,0,0) 70.71%),
+                    linear-gradient(127deg, rgba(9, 10, 9, 0.8), rgba(207, 215, 207, 0) 70.71%);
+      }
+      #bg-img {
+        background-image: url("images/bgrnd.jpg");
+        background-size: cover;
+        background-position: right center;
+        background-repeat: no-repeat;
+      }
+    </style>
+
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">

@@ -47,7 +47,7 @@
                 <div class="row">
 
                 <?php if (isset($_SESSION['message']))  : ?>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger text-center" role="alert">
                 <strong><?php echo $_SESSION['message']; ?></strong>
             </div>
             <?php unset($_SESSION['message']); endif; ?>

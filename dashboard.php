@@ -84,7 +84,7 @@
     function divideProducts()
     {
         $sum    = totalProducts();
-        $result = $sum / 2;
+        $result = $sum * 10;
 
         return $result;
     }
