@@ -15,32 +15,27 @@
         if (empty($user_email) || empty($user_password) || empty($first_name) || empty($confirm_user_password || empty($last_name)))
         {
             $_SESSION['message'] = 'All Inputs Are Required';
-            $_SESSION['icon'] = 'fa-solid fa-xmark';
             header('location: signup.php');
         }
         else if (!preg_match("/^[a-zA-Z-' ]*$/",$first_name) || !preg_match("/^[a-zA-Z-' ]*$/",$last_name))
         {
             $_SESSION['message'] = 'Only Letters And White Space Allowed In The UserName';
-            $_SESSION['icon'] = 'fa-solid fa-xmark';
             header('location: signup.php');
         }
         else if (!filter_var($user_email, FILTER_VALIDATE_EMAIL))
         {
             $_SESSION['message'] = 'Please Entre A Valid Email';
-            $_SESSION['icon'] = 'fa-solid fa-xmark';
             header('location: signup.php');
         }
         else if(mysqli_num_rows($check_email) != 0)
         {
-                $_SESSION['message'] = 'Email already received earlier, Try another account.';
-                $_SESSION['icon'] = 'fa-solid fa-xmark';
-                header('location: signup.php');
+            $_SESSION['message'] = 'Email already received earlier, Try another account.';
+            header('location: signup.php');
 
         }
         else if($user_password != $confirm_user_password)
         {
             $_SESSION['message'] = 'The Passwords Are Not Identical';
-            $_SESSION['icon'] = 'fa-solid fa-xmark';
             header('location: signup.php');
         }
         else

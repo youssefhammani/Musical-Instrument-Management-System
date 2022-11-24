@@ -31,7 +31,7 @@
                                     <div class="badge bg-dark text-white position-absolute m-2" style="top: 0.5rem; right: 0.5rem" id="category'.$id.'" data="'.$rows['category_id'].'">
                                         '.$rows['category'].'
                                     </div>
-                                    <img src="https://source.unsplash.com/600x900/?tech,street" class="card-img" alt="PRODUCT PHOTO">
+                                    <img src="https://source.unsplash.com/600x900/?guitar,guitar" class="card-img" alt="PRODUCT PHOTO">
                                 </div>
                                 <div class="col-md-8 ">
                                     <div class="card-body">
